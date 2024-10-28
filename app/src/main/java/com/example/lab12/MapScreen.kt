@@ -54,7 +54,7 @@ fun MapScreen() {
     Box(modifier = Modifier.fillMaxSize()) {
         GoogleMap(
             modifier = Modifier.fillMaxSize(),
-            cameraPositionState = cameraPositionState
+            cameraPositionState = cameraPositionState // Sin mapType
         ) {
             // Añadir marcador en Arequipa, Perú con ícono azul
             Marker(
@@ -67,7 +67,7 @@ fun MapScreen() {
             locations.forEach { location ->
                 Marker(
                     state = rememberMarkerState(position = location),
-                    icon = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN), // Cambia el color si lo deseas
+                    icon = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN),
                     title = "Ubicación",
                     snippet = "Punto de interés"
                 )
@@ -77,7 +77,7 @@ fun MapScreen() {
             Polygon(
                 points = plazaDeArmasPolygon,
                 strokeColor = Color.Red,
-                fillColor = Color.Blue.copy(alpha = 0.5f), // Color azul con cierta transparencia
+                fillColor = Color.Blue.copy(alpha = 0.5f),
                 strokeWidth = 5f
             )
             Polygon(
@@ -95,7 +95,7 @@ fun MapScreen() {
         }
     }
 
-    // Mover la cámara a una nueva ubicación y hacer zoom
+    // Mover la cámara a una nueva ubicación y hacer zoom para simular un mapa de terreno
     LaunchedEffect(Unit) {
         cameraPositionState.animate(
             update = CameraUpdateFactory.newLatLngZoom(LatLng(-16.2520984, -71.6836503), 12f), // Mover a Yura
