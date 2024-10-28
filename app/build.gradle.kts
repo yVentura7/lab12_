@@ -65,7 +65,7 @@ secrets {
 
 dependencies {
 
-    val mapsComposeVersion = "4.4.1"
+    val mapsComposeVersion = "4.4.2"
     implementation("com.google.maps.android:maps-compose:$mapsComposeVersion")
     implementation("com.google.maps.android:maps-compose-utils:$mapsComposeVersion")
     implementation("com.google.maps.android:maps-compose-widgets:$mapsComposeVersion")
